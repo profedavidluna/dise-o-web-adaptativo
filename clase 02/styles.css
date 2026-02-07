@@ -1,0 +1,338 @@
+/* ========================================================== */
+/* 1. ESTILOS BASE (MOBILE FIRST: < 601px) */
+/* ========================================================== */
+
+/* Fuentes y Reset Básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #1a1a1a;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header (MOBILE) */
+.main-header {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-bottom: 3px solid #000000; /* Línea de Nike */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #000000;
+}
+
+/* Navegación (MOBILE) */
+.desktop-menu {
+    display: none; /* Oculto por defecto en móvil */
+}
+
+.utility-icons {
+    display: flex;
+    align-items: center;
+}
+
+.shopping-cart {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+.mobile-menu-button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-nav {
+    /* Por defecto, está oculta. Se puede mostrar con JS o con CSS puro (:target) */
+    display: none; 
+    padding-top: 10px;
+    text-align: center;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    padding: 10px 0;
+    font-weight: 600;
+    border-top: 1px solid #eee;
+}
+
+/* Hero Section (MOBILE) - Contenido Apilado */
+.hero-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero-image-container img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain; /* Asegura que la imagen se vea completa */
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-size: 1em;
+    font-weight: 600;
+    color: #ff5733; /* Color de acento */
+    margin-bottom: 5px;
+}
+
+.product-title {
+    font-size: 2.5em;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #444444;
+}
+
+/* Features Section (MOBILE) - Apiladas */
+.features-section {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ff5733;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.feature-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.feature-icon {
+    font-size: 2em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Footer (MOBILE) - Apilado */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #cccccc;
+    padding: 30px 20px;
+    font-size: 0.9em;
+}
+
+.footer-columns {
+    margin-bottom: 20px;
+}
+
+.footer-columns .col {
+    margin-bottom: 20px;
+}
+
+.footer-columns h4 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.footer-columns ul a {
+    color: #cccccc;
+    display: block;
+    padding: 3px 0;
+    transition: color 0.3s;
+}
+
+.footer-columns ul a:hover {
+    color: #ff5733;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+
+/* ========================================================== */
+/* 2. MEDIA QUERY PARA TABLET (min-width: 601px) */
+/* Experiencia: Navegación horizontal, Hero en 2 columnas */
+/* ========================================================== */
+@media screen and (min-width: 601px) {
+    
+    /* Header/Navegación */
+    .mobile-menu-button,
+    .mobile-nav {
+        display: none; /* Ocultar elementos móviles */
+    }
+
+    .desktop-menu {
+        display: block; /* Mostrar menú horizontal */
+    }
+    
+    .main-nav ul {
+        display: flex;
+    }
+    
+    .main-nav ul li {
+        margin-left: 20px;
+    }
+    
+    /* Hero Section - 2 Columnas */
+    .hero-section {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        padding: 60px 40px;
+    }
+
+    .hero-image-container,
+    .hero-text-content {
+        flex: 1; /* Distribuye el espacio equitativamente */
+        padding: 0 20px;
+    }
+    
+    .hero-image-container img {
+        max-height: 450px;
+    }
+    
+    .product-title {
+        font-size: 3em;
+    }
+    
+    /* Features Section - 2 Columnas */
+    .features-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .feature-item {
+        text-align: left;
+    }
+    
+    /* Footer */
+    .footer-columns {
+        display: flex;
+        justify-content: space-between;
+        max-width: 800px;
+        margin: 0 auto 20px;
+        text-align: left;
+    }
+    
+    .footer-columns .col {
+        margin-bottom: 0;
+    }
+}
+
+
+/* ========================================================== */
+/* 3. MEDIA QUERY PARA DESKTOP (min-width: 1025px) */
+/* Experiencia: Diseño a gran escala, Grid de 3 columnas */
+/* ========================================================== */
+@media screen and (min-width: 1025px) {
+    
+    /* Header - Contenedor centrado */
+    .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Hero Section - Aumentar tamaño y centrar contenido */
+    .hero-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 0;
+    }
+    
+    .hero-image-container {
+        padding: 0 40px;
+    }
+    
+    .hero-text-content {
+        padding-right: 40px;
+    }
+    
+    .product-title {
+        /* Aumento dramático de la fuente para impacto visual */
+        font-size: 5em; 
+    }
+    
+    /* Features Section - 3 Columnas */
+    .features-container {
+        grid-template-columns: repeat(3, 1fr); /* Cambio clave a 3 columnas */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+    
+    .features-section {
+        padding: 60px 0;
+    }
+    
+    /* Footer */
+    .main-footer {
+        padding: 40px 0;
+    }
+    
+    .footer-columns {
+        max-width: 1200px;
+    }
+
+}
